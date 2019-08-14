@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Shero_Maintenance",
+    "type": "magento-module",
+    "license": "OSL",
+    "homepage": "",
+    "description": "Put a website on maintenance mode, whitelist IPs, and block dev and staging websites from general visitors.",
+    "authors": [
+    {
+        "name": "SheroDesigns",
+        "email": "support@sherodesigns.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

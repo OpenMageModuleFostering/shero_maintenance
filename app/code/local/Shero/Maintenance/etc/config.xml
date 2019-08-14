@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Shero_Maintenance>
+            <version>1.0.0</version>
+        </Shero_Maintenance>
+    </modules>
+
+    <global>
+        <helpers>
+            <shero_maintenance>
+                <class>Shero_Maintenance_Helper</class>
+            </shero_maintenance>
+        </helpers>
+
+        <models>
+            <shero_maintenance>
+                <class>Shero_Maintenance_Model</class>
+            </shero_maintenance>
+        </models>
+    </global>
+
+    <frontend>
+        <events>
+            <controller_action_postdispatch>
+                <observers>
+                    <shero_maintenance>
+                        <type>singleton</type>
+                        <class>Shero_Maintenance_Model_Observer</class>
+                        <method>switchStoreToMaintenance</method>
+                    </shero_maintenance>
+                </observers>
+            </controller_action_postdispatch>
+        </events>
+
+        <layout>
+            <updates>
+                <shero_maintenance>
+                    <file>shero/maintenance.xml</file>
+                </shero_maintenance>
+            </updates>
+        </layout>
+
+        <routers>
+            <shero_maintenance>
+                <use>standard</use>
+                <args>
+                    <module>Shero_Maintenance</module>
+                    <frontName>alert</frontName>
+                </args>
+            </shero_maintenance>
+        </routers>
+    </frontend>
+
+    <adminhtml>
+            <layout>
+                <updates>
+                    <shero_maintenance>
+                        <file>picker.xml</file>
+                    </shero_maintenance>
+                </updates>
+            </layout>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <shero>
+                                            <title>Shero Extensions</title>
+                                        </shero>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <default>
+        <shero>
+            <maintenance_settings>
+                <maintenance_enable>0</maintenance_enable>
+            </maintenance_settings>
+            <maintenance_alert>
+                <alert_enabled>0</alert_enabled>
+            </maintenance_alert>
+        </shero>
+    </default>
+</config>

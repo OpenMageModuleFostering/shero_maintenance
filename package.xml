@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+    <name>Shero_Maintenance</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="https://opensource.org/licenses/osl-3.0.php">OSL</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Put a website on maintenance mode, whitelist IPs, and block dev and staging websites from general visitors.</summary>
+    <description>Brief Description: Put a website on maintenance mode, whitelist IPs, and block dev and staging websites from general visitors.&#xD;
+&#xD;
+Detailed Description: This extension can be used for the following three purposes:&#xD;
+&#xD;
+1) Put a Magento website on maintenance mode where the live website goes down and only certain IP numbers can view it. Setting a website on Maintenance Mode is useful during deployments.&#xD;
+&#xD;
+2) Show visitors a banner saying that your website will be undergoing maintenance from this date to that date.&#xD;
+&#xD;
+3) Use this extension to block visitors&#x2002;&#x2002;from accessing your dev and staging environments. &#xD;
+Enjoy!</description>
+    <notes>This extension can put a website on maintenance mode, whitelist IPs, and block dev and staging websites from general visitors.</notes>
+    <authors><author><name>SheroDesigns</name><user>SheroDesigns</user><email>support@sherodesigns.com</email></author></authors>
+    <date>2016-04-22</date>
+    <time>13:06:34</time>
+    <contents><target name="magelocal"><dir name="Shero"><dir name="Maintenance"><dir name="Helper"><file name="Data.php" hash="425b32784208591848dd4368aa8d6f13"/></dir><dir name="Model"><file name="Observer.php" hash="f3624a3451e2397c0a423f79c47269bc"/></dir><dir name="controllers"><file name="IndexController.php" hash="666697c0efefaa05e4142fc630f8ac51"/></dir><dir name="etc"><file name="config.xml" hash="b725a94b7943515bfe31a71460f3aae9"/><file name="system.xml" hash="fc07d39cf4e7afb517c147595b285bc8"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Shero_Maintenance.xml" hash="5608e7bd627d336dfd488f15fdbc518b"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="picker.xml" hash="2c2bcd8b7c9318b1b94eb0fdef1cab63"/></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><dir name="shero"><file name="maintenance.xml" hash="f6ad3771595e91800796d316a5dcf9fe"/></dir></dir><dir name="template"><dir name="maintenance"><dir name="page"><dir name="html"><file name="notices.phtml" hash="404909f5dfdf266906bfb4d881aa7a38"/></dir></dir></dir></dir></dir></dir></dir></target><target name="mageskin"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="images"><dir name="shero"><file name="shero-extension-banner_thumb.png" hash="9bee22ff9ad91af7f0f5bf1efca0fa04"/></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="css"><dir name="shero"><file name="maintenance.css" hash="20b1a33a0186505e20e379a07b965e6f"/></dir></dir></dir></dir></dir></target><target name="mageweb"><dir name="js"><dir name="jscolor"><file name="arrow.gif" hash="5034704a76cd55c1cbcbc58ea6bf523f"/><file name="cross.gif" hash="ba9a274b9323753cd95bc3b1eb2f4e5f"/><file name="demo.html" hash="edf71251cb2be20322d2efb00aee86a6"/><file name="hs.png" hash="fefa1a03d92ebad25c88dca94a0b63db"/><file name="hv.png" hash="990d71cada17da100653636cf8490884"/><file name="jscolor.js" hash="b65a1505390592ac6c0177d6b84774e0"/></dir><dir name="shero"><dir name="maintenance"><file name="maintenance.js" hash="459496bd0a1b17f556e60417f38ec034"/></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.4.0</min><max>7.0.0</max></php></required></dependencies>
+</package>

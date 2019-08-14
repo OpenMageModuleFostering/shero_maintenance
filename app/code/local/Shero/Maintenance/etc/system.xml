@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <shero translate="label" module="shero_maintenance">
+            <label><![CDATA[<div style="position: absolute;"><img id="sherologo" src="" alt="" border="0" /></div>&nbsp;<script>
+	            var n = SKIN_URL.indexOf("adminhtml");
+            $('sherologo').src = SKIN_URL.substring(0, n) + "adminhtml/default/default/images/shero/shero-extension-banner_thumb.png";</script>]]></label>
+            <sort_order>900</sort_order>
+        </shero>
+    </tabs>
+    <sections>
+        <shero translate="label" module="shero_maintenance">
+            <label><![CDATA[Maintenance Mode & IP Whitelist]]></label>
+            <tab>shero</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>999</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <maintenance_settings translate="label">
+                    <label>Maintenance Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <maintenance_enable translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </maintenance_enable>
+                        <allow_ips translate="label,comment">
+                            <label>Allow IPs</label>
+                            <comment><![CDATA[add allow IPs comma separated values. ex: 127.0.0.1,10.10.10.10]]></comment>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><maintenance_enable>1</maintenance_enable></depends>
+                        </allow_ips>
+                        <redirect_to translate="label,comment">
+                            <label>Redirect to</label>
+                            <comment><![CDATA[add an URL or file name.ex:http://www.example.com or example.html.  If blank the page will redirect to our default maintenance page]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><maintenance_enable>1</maintenance_enable></depends>
+                            <depends><setup_maintenance_enable>0</setup_maintenance_enable></depends>
+                        </redirect_to>
+                        <setup_maintenance_enable translate="label">
+                            <label>Setup Your Own Page</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><maintenance_enable>1</maintenance_enable></depends>
+                        </setup_maintenance_enable>
+                        <redirect_image translate="label comment">
+                            <label>Maintenance Page Logo</label>
+                            <comment>Allowed file types: jpeg, gif, png.</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">maintenance</upload_dir>
+                            <base_url type="media" scope_info="1">maintenance</base_url>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><maintenance_enable>1</maintenance_enable><setup_maintenance_enable>1</setup_maintenance_enable></depends>
+                        </redirect_image>
+                        <maintenance_message translate="label">
+                            <label>Maintenance Message</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><maintenance_enable>1</maintenance_enable><setup_maintenance_enable>1</setup_maintenance_enable></depends>
+                        </maintenance_message>
+                    </fields>
+                </maintenance_settings>
+                <maintenance_alert translate="label">
+                    <label>Maintenance Alert</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <alert_enabled translate="label">
+                            <label>Enable Maintenance Alert</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </alert_enabled>
+                        <alert_message translate="label">
+                            <label>Alert Message</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><alert_enabled>1</alert_enabled></depends>
+                        </alert_message>
+                        <alert_color>
+                            <label>Alert Background Color</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>color</validate>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Specify the background color.</comment>
+                            <depends><alert_enabled>1</alert_enabled></depends>
+                        </alert_color>
+                        <alert_text_color>
+                            <label>Alert Text Color</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>color</validate>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Specify the text color.</comment>
+                            <depends><alert_enabled>1</alert_enabled></depends>
+                        </alert_text_color>
+                    </fields>
+                </maintenance_alert>
+            </groups>
+        </shero>
+    </sections>
+</config>

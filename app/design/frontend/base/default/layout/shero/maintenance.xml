@@ -1,0 +1,18 @@
+<layout>
+    <default>
+        <reference name="head">
+            <action method="addJs">
+                <script>shero/maintenance/maintenance.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/shero/maintenance.css</name>
+            </action>
+        </reference>
+        <reference name='global_notices'>
+            <action method='setTemplate'>
+                <template>maintenance/page/html/notices.phtml</template>
+            </action>
+        </reference>
+    </default>
+</layout>
