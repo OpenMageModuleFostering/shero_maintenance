@@ -45,6 +45,7 @@ class Shero_Maintenance_Helper_Data extends Mage_Core_Helper_Abstract
         $basePath = Mage::getBaseDir(Mage_Core_Model_Store::URL_TYPE_MEDIA) . DS . "maintenance" .DS . $image;
         $newPath = Mage::getBaseDir(Mage_Core_Model_Store::URL_TYPE_MEDIA) . DS . "maintenance" . DS . "resized" . DS . $image;
 
+
         $imageObj = new Varien_Image($basePath);
         $imageObj->constrainOnly(TRUE);
         $imageObj->keepAspectRatio(FALSE);
@@ -66,10 +67,9 @@ class Shero_Maintenance_Helper_Data extends Mage_Core_Helper_Abstract
             }
             $imageObj->resize($maxWidth, $maxHeight);
             $imageObj->save($newPath);
-            unlink($basePath);
+            //unlink($basePath);
             return Mage::getBaseUrl('media') . "maintenance/resized/" . $image;
-        }
-        else{
+        }else{
             return Mage::getBaseUrl('media') . "maintenance/resized/" . $image;
         }
     }

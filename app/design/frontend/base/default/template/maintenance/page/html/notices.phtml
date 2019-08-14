@@ -41,7 +41,15 @@
         </div>
     </noscript>
 <?php endif; ?>
-<span id="maintenance_alert_url" style="display: none;"><?php echo Mage::getUrl('alert');?></span>
+<span id="maintenance_alert_url" style="display: none;">
+    <?php
+    if(isset($_SERVER['HTTPS'])) {
+        echo Mage::getUrl('alert',array('_secure'=>true));
+    } else {
+        echo Mage::getUrl('alert');;
+    }
+    ?>
+</span>
 <span id="alert"></span>
 <?php if ($this->displayDemoNotice()): ?>
     <div class="global-site-notice demo-notice">
